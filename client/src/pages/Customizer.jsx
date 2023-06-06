@@ -63,6 +63,9 @@ const Customizer = () => {
 
         handleDecals(type,`data:image/png;base64,${data.photo}`)
     }catch(err){
+        if(err==`SyntaxError: Unexpected token 'T', "Too many r"... is not valid JSON`){ 
+            alert("Cannot send more than 2 request per 30 mins.."); 
+        } else
         alert(err);
     }
     finally{
